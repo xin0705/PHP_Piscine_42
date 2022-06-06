@@ -1,0 +1,87 @@
+h1 {
+	text-align: center;
+	font-size: 3vw
+}
+
+div {
+	text-align: center;
+}
+
+img {
+	max-width: 10%;
+	height: auto;
+	width: auto;
+}
+
+p {
+	margin: 3vw;
+}
+
+h2 {
+	text-align: center;
+	margin: center;
+	font-size: 0.9vw
+}
+td {
+	width: 5vw;
+	font-weight: bold;
+	font-size: large;
+	position:relative;
+	padding: 1.5vw;
+}
+.atomicWeight {
+	font-size: 0.9vw;
+	font-weight: lighter;
+	position:absolute;
+	bottom:0;
+	right:0;
+	margin: 0.1vw;
+}
+.atomicNumber {
+	font-size: 0.9vw;
+	font-weight: lighter;
+	position:absolute;
+	bottom:0;
+	left:0;
+	margin: 0.1vw;
+}
+
+.none_metal {
+	background-color: gray;
+}
+
+.noble_gas {
+	background-color: blue;
+}
+
+.alkali_metal {
+	background-color: orange;
+}
+
+.alkaline_earth_metal {
+	background-color: red;
+}
+
+.transition_metal {
+	background-color: yellow;
+}
+
+.metal {
+	background-color: green;
+}
+
+.metalloid {
+	background-color: greenyellow;
+}
+
+.halogen {
+	background-color: lightskyblue;
+}
+
+.lanthanide {
+	background-color: purple;
+}
+
+.actinide {
+	background-color: pink;
+}
