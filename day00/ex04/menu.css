@@ -1,0 +1,70 @@
+ul {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+.logo {
+	width: 200px;
+}
+
+li {
+	display: block;
+	float: left;
+	text-align: center;
+	width: 120px;
+}
+
+li ul li {
+	float: none;
+}
+
+li ul,
+.hid ul li ul {
+	display: none;
+}
+
+li:hover ul {
+	display: block;
+}
+
+.hid:hover ul li ul {
+	display: block;
+}
+
+.hid:hover .hid2 ul li ul {
+	display: none;
+}
+
+.hid:hover .hid2:hover ul li ul {
+	display: block;
+}
+
+
+/*DROPDOWN STYLING:*/
+#menu {
+	height: 30px
+}
+
+#menu li {
+	background-color: #FFF;
+	border: solid 1px #CCC;
+}
+
+#menu li:hover {
+	background-color: #0072BA
+}
+
+#menu a {
+	color: #024E67;
+	padding: 10px 15px 10px 15px;
+}
+
+#menu a:hover {
+	color: #7a3b3b;
+}

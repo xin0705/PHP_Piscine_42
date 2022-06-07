@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link type="text/css" rel="styleSheet"  href="doft.css" />
-</head>
-<body>
-	<div id="container">
-		<div class="top">
-			<div class="title">
-				<img src="resources/day_of_the_42.png" alt="Day of the 42" style="width:100%; padding: 2%;" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="doft.css" />
+    <title>Day of the 42</title>
+  </head>
+  <body>
+    <div class="container">
+	<!-- top -->
+    	<div class="top-full">
+			<div class="top-left">
+				<img class="title" src="resources/day_of_the_42.png"/>
 			</div>
-			<div id="loupe">
-				<img src="resources/loupe.png" >
+			<div class="top-right">
+				<div class="loupe">
+					<img class="loupe" src="resources/loupe.png"/>
+				</div>
+				<div class="top-right-icons">
+					<a href="https://www.disney.com"><img class="reload" alt="Start from the beginning" title="Start from the beginning" src="resources/reload.png"></a>
+					<a href="https://relaischateaux.com"><img class="close" alt="Disconnect" title="Disconnect" src="resources/close.gif"></a>
+				</div>
 			</div>
-			<div>
-				<div id="reload">
-					<img src="resources/reload.png" >
-				</div>
-				<div id="close">
-					<img src="resources/close.gif" >
-				</div>
+      	</div>
+	
+	<!-- middle -->
+		<div class="middle-full">
+			<div class="middle-left">
+				<img class="middle-left" alt="Move" title="Move" src="resources/arrow.png">
+				<img class="middle-left" title="Take" src="resources/main.png">
+				<img title="Look" class="red-border" src="resources/oeil.png">
+				<img class="middle-left" title="Use" src="resources/outil.png">
+				<img class="middle-left" title="Speak" src="resources/chat-icon.png">
+			</div>
+
+			<div class="middle-main">
+				<img class="cluster" src="resources/cluster.jpg"/>
+				<a class="chair-link" href="https://www.ikea.com"></a>
+				<a class="monitor-link" href="https://www.apple.com"></a>
+			</div>
+
+			<div class="middle-right">
+				<img class="middle-right" alt="Read" title="Read" src="resources/book.png">
+				<img class="middle-right" alt="Shower" title="Shower" src="resources/towel.png">
+				<div title="Brick wall" class="stretched-bricks"></div>
 			</div>
 		</div>
-
-
+	
 	</div>
-</body>
+
+	<!-- bottom-floating -->
+    <div class="bottom-floating">
+      <p>Vous <span class="bigger-text">entrez</span> alors dans une grande piece remplie d'<span class="red-shadow">ordinateurs</span>...<br>
+      <i>- Bonjour, vous êtes nouveau ici ?</i>
+      </p>
+      <form action="#">
+        <input class="input" type="text" size="59"/>
+        <input class="submit" type="submit" value="Repondre" />
+      </form>
+    </div>
+  </body>
 </html>
