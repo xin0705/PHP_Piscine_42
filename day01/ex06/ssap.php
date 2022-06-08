@@ -14,8 +14,7 @@
 	}
 	else
 		exit (0);
-	sort($res);
-	//sort($res, SORT_STRING);
+	sort($res, SORT_STRING);
 	foreach ($res as $elem)
 		echo "$elem\n";
 ?>
