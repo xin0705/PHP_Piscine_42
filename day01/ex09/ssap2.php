@@ -1,6 +1,8 @@
 #!/usr/bin/php
 <?php
 	$res = array();
+	$res_nb = array();
+	
 	if ($argc > 1)
 	{
 		for ($i = 1; $i < $argc; $i++)
@@ -14,7 +16,18 @@
 	}
 	else
 		exit (0);
-	sort($res, SORT_STRING);
+	
+	function filter_nb($value)
+	{
+		if (is_numeric($value))
+				return TRUE;
+		else	
+				return FALSE;
+	}
+
+	$res_nb = array_filter($res, "filter_nb")
+print_r($res_nb);
+//	sort($res_nb, SORT_STRING);
 	foreach ($res as $elem)
 		 echo "$elem\n";
 ?>
