@@ -3,7 +3,7 @@
 	if ($argc == 2)
 	{
 		$str = trim($argv[1]);
-		$str_singlespace = preg_replace('/\s(?=\s)/',"\\1",$str);
+		$str_singlespace = preg_replace('/\s+/'," ",$str);
 		echo $str_singlespace."\n";
 	}
 	else
