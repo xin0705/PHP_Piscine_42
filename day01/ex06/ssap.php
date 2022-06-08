@@ -14,7 +14,6 @@
 	}
 	else
 		exit (0);
-
 	sort($res);
 	foreach ($res as $elem)
 		echo "$elem\n";
