@@ -1,9 +1,33 @@
 <?php
-	$file_path = '../private/passwd';
-	$folder = '../private';
 
-	if ($_POST['login'] && $_POST['oldpw'] && $_POST['newpw'] && $_POST['submit'] && $_POST['submit'] === "OK" && file_exists($file_path))
-	{
+include("./templates/header.php");
+echo '
+<main>
+<div class="first-section flex-container" id="flex_forms">
+	<div class="forms">
+		<div class="banner-text flex-container">
+			<h3>Change password</h3>
+			<form action="modif.php" method="post">
+				<p>Login: <input type="text" name="login"></p>
+				<p>Old password: <input type="password" name="oldpw"></p>
+				<p>New password: <input type="password" name="newpw"></p>
+				<p><input type="submit" name="submit" value="OK"></p>
+			</form>
+		</div>
+	</div>
+</div>
+</main>
+</body>
+
+</html>
+';
+
+	$file_path = './private/passwd';
+	$folder = './private';
+
+	if ($_POST['submit'] != 'OK' || $_POST['login'] == "" || $_POST['oldpw'] == "" || $_POST['newpw'] == "" || $_POST['oldpw'] == $_POST['newpw']) 
+		return;
+	
 	
 		$file_content = file_get_contents($file_path);
 		$data = unserialize($file_content);
@@ -26,10 +50,7 @@
 			$file_content = serialize($data);
 			file_put_contents($file_path, $file_content);
 			echo "OK\n";
+			header("Location: ./index.php");
 		}
-		else
-			echo "ERROR\n";
-	}
-	else 
-		echo "ERROR\n";
+
 ?>

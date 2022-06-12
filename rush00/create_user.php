@@ -1,4 +1,29 @@
 <?php
+	session_start();
+	include("./templates/header.php");
+	
+	echo '
+	<main>
+	<div class="first-section flex-container" id="flex_forms">
+		<div class="forms">
+			<div class="banner-text flex-container">
+				<h3>Sign up</h3>
+				<form action="./create_user.php" method="post">
+					<p>Username: <input type="text" name="login" value=""></p>
+					<br />
+					<p>Password: <input type="password" name="passwd" value=""></p>
+					<br />
+					<p><input type="submit" name="submit" value="OK"></p>
+				</form>
+			</div>
+		</div>
+	</div>
+	</main>
+	</body>
+	
+	</html>
+	';
+
 	if ($_POST['login'] && $_POST['passwd'] && $_POST['submit'] && $_POST['submit'] === "OK")
 	{
 		$file_path = './private/passwd';
@@ -44,3 +69,4 @@
 		echo '<a href="create_user.html">back to input another name </a>';
 	}
 ?>
+

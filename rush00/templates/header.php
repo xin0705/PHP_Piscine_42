@@ -28,10 +28,10 @@ echo
 						<a class="navspan dropdown">Categories</a>
 							<div class="dropdown-content">';
 
-		if (file_exists('./categories.db')) {
-			$db = unserialize(file_get_contents('./categories.db'));
+		if (file_exists('./category.db')) {
+			$db = unserialize(file_get_contents('./categoy.db'));
 			foreach ($db as $category) {
-				echo '<a href="product_list.php?categories=';
+				echo '<a href="product_list.php?category=';
 				echo $category['id'] . '">' . $category['name'] . '</a>';
 			}
 		}
@@ -45,22 +45,9 @@ echo
 							<a class="navspan" href="./login.php">Login</a>
 						</div>
 						<div class="drop">
-							<a class="navspan" href="./create_user.html">Sign up</a>
+							<a class="navspan" href="./create_user.php">Sign up</a>
 						</div>';
 			};
-
-// echo '
-// 	<div class="drop">
-// 				<a class="navspan dropdown">Categories</a>
-// 					<div class="dropdown-content">';
-
-// if (file_exists('./categories.db')) {
-//     $db = unserialize(file_get_contents('./categories.db'));
-//     foreach ($db as $category) {
-//         echo '<a href="product_list.php?categories=';
-//         echo $category['id'] . '">' . $category['name'] . '</a>';
-//     }
-// }
 
 if ($_SESSION["loggued_on_user"] !== "") {
 	if ($_SESSION["admin"]) {
