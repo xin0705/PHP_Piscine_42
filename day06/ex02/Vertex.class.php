@@ -12,28 +12,23 @@
 
 		static $verbose = False;
 
-		function __construct($coords)
+		function __construct($arr)
 		{
-			$this->_x = $coords['x'];
-			$this->_y = $coords['y'];
-			$this->_z = $coords['z'];
-
-			if (isset($coords['w'])) 
-				$this->_w = $coords['w'];
-		
-			if (isset($coords['color']))
-				$this->_color = $coords['color'];
-		
-			else
+			if (isset($arr['dest']) && $arr['dest'] instanceof Vertex)
 			{
-				$this->_color = new Color(array(
-					'red' => 255,
-					'green' => 255,
-					'blue' => 255
-				));
-			}
+				if (isset($arr['orig']) && $arr['orig'] instanceof Vertex) 
+				{
+					$orig_coords = array('x' => $arr['orig']->read_x(), 'y' => $arr['orig']->read_y(), 'z' => $arr['orig']->read_z());
+					$orig = new Vertex($orig_coords);
+				}
+				else
+					$orig = new Vertex(array('x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0));
 
-			if (Vertex::$verbose) 
+				$this->_x = $arr['dest']->read_x() - $orig->read_x();
+				$this->_y = $arr['dest']->read_y() - $orig->read_y(); 
+				$this->_z = $arr['dest']->read_z() - $orig->read_z();
+			}
+			if (Vector::$verbose) 
 				print($this->__toString() . " constructed\n");
 		}
 
