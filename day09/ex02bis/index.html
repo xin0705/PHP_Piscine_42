@@ -4,20 +4,23 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
 	<title>TO-DO LIST</title>
 	<style>
 
 		.todo_elem
 		{
-				width: 70%;
-				margin: 5px 0;
-				padding: 5px 10px;
-				display: inline-block;
-				border: 1px solid black;
-				box-sizing: border-box;
-				border-radius: 3px;
+			width: 70%;
+			margin: 5px 0;
+			padding: 5px 10px;
+			display: inline-block;
+			border: 1px solid black;
+			box-sizing: border-box;
+			border-radius: 3px;
 		}
-		
+
 		.todo_elem:hover
 		{
 			opacity: 0.7;
@@ -28,7 +31,7 @@
 	<div id="title">
 		<h1>TO DO LIST!</h1>
 	</div>
-	<button id="button_new" onclick="add_item()">New</button><br /><br />
+	<button id="button_new">New</button><br /><br />
 	<div id="ft_list">
 	</div>
 	<script type="text/javascript" src="todo.js"></script>

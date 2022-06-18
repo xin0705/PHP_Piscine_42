@@ -1,0 +1,58 @@
+<!DOCTnum2PE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="num1-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+	<title>Calculator</title>
+</head>
+
+<script>
+		setInterval(useMe, 30000);
+		function useMe()
+		{
+			alert("Please, use me...");
+		}
+
+		$(document).ready(function()
+		{
+			$("#submit").on("click", function(){
+				var num1 = Number($("#num1").val());
+				var num2 = Number($("#num2").val());
+				var operator = $("#operator").val();
+				if ($("#num1").val() == '' || $("#num2").val() == '' || num1 < 0 || num2 < 0 || 
+					isNaN($("#num1").val()) || isNaN($("#num1").val()) || !Number.isInteger(num1) || !Number.isInteger(num2))
+					alert("Error :(");
+				else if (num2 == 0 && (operator == "%" || operator == "/"))
+				{
+					alert("It's over 9000!");
+					console.log("It's over 9000!");
+				}
+				else
+				{
+					alert(eval(num1 + operator + num2));
+					console.log(eval(num1 + operator + num2));
+				}
+			});
+		});
+
+</script>
+
+<body>
+	<form>
+	<input type="text" id="num1">
+	<select id="operator">
+		<option value="+"> + </option>
+		<option value="-"> - </option>
+		<option value="*"> * </option>
+		<option value="/"> / </option>
+		<option value="%"> % </option>
+	</select>
+	<input type="text" id="num2"><br />
+	<input type="submit" id="submit" value="Try me!"><br />
+</form>
+</body>
+</html>

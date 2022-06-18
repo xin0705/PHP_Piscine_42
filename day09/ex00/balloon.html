@@ -8,7 +8,7 @@
 	
 	<style>
 
-		#ballon {
+		#balloon {
 			height: 200px;
 			width: 200px;
 			background-color: red;
@@ -21,53 +21,39 @@
 
 
 <body>
-	<div id = "ballon"></div>
+	<div id = "balloon"></div>
 <script>
 	var size = 200;
 	const color_array = ["red", "green", "blue"];
 	var i = 0;
-	var ballon = document.getElementById("ballon");
+	var balloon = document.getElementById("balloon");
 
-	ballon.onclick = function() 
+	balloon.onclick = function() 
 	{
 		size = size + 10;
-		if (size <= 420)
-		{
-			ballon.style.height = size + 'px';
-			ballon.style.width = size + 'px';
-		}
-		else
-		{
+		if (size > 420)
 			size = 200;
-			ballon.style.height = size + 'px';
-			ballon.style.width = size + 'px';
-		};
+		balloon.style.height = size + 'px';
+		balloon.style.width = size + 'px';
 
 		i = i + 1;
 		if (i > 2)
 			i = 0;
-		ballon.style.backgroundColor = color_array[i];
+		balloon.style.backgroundColor = color_array[i];
 	};
 
-	ballon.onmouseleave = function() 
+	balloon.onmouseleave = function() 
 	{
 		size = size - 5;
-		if (size >= 200)
-		{
-			ballon.style.height = size + 'px';
-			ballon.style.width = size + 'px';
-		}
-		else
-		{
+		if (size < 200)
 			size = 200;
-			ballon.style.height = size + 'px';
-			ballon.style.width = size + 'px';
-		};
+		balloon.style.height = size + 'px';
+		balloon.style.width = size + 'px';
 
 		i = i - 1;
 		if (i < 0)
 			i = 2;
-		ballon.style.backgroundColor = color_array[i];
+		balloon.style.backgroundColor = color_array[i];
 	};
 
 </script>

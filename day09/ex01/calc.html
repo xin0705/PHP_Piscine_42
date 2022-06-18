@@ -8,73 +8,50 @@
 </head>
 <script>
 
+	setInterval(useMe, 30000);
+		function useMe()
+		{
+			alert("Please, use me...");
+		}
 
-
-function calculate() 
-{
-	var num1_str = document.getElementById("num1").value;
-	var num2_str = document.getElementById("num2").value;
-	var operator = document.getElementById("operator").value;
-
-	num1 = Number(num1_str);
-	num2 = Number(num2_str);
-	// var r = "^\\d+$";
-	// if (r.test(num1_str) && r.test(num2_str))
-	// {
-
-		var res = get_res(num1, num2, operator);
-		alert(res);
-		console.log(res);
-	// }
-
-	// else
-	// 	alert("Error :(");
-
-
-
-
-
-
-}
-
-function get_res(num1, num2, operator)
-{
-	switch (operator)
+	function calculate() 
 	{
-		case ("+"):
-			res = num1 + num2;
-			break;
-		case ("-"):
-			res = num1 - num2;
-			break;
-		case ("*"):
-			res = num1 * num2;
-			break;
-		case ("/"):
-			res = num1 / num2;
-			break;
-		case ("%"):
-			res = num1 % num2;
-			break;
+		var num1_str = document.getElementById("num1").value;
+		var num2_str = document.getElementById("num2").value;
+		var operator = document.getElementById("operator").value;
+
+		num1 = Number(num1_str);
+		num2 = Number(num2_str);
+
+		if (num1_str == '' || num2_str == '' || num1 < 0 || num2 < 0 ||
+					isNaN(num1_str) || isNaN(num2_str) ||
+					!Number.isInteger(num1) || !Number.isInteger(num2))
+				alert("Error :(");
+			else if (num2 == 0 && (operator == "%" || operator == "/"))
+			{
+				alert("It's over 9000!");
+				console.log("It's over 9000!");
+			}
+			else 
+			{
+				var res = eval(num1 + operator + num2);
+				alert(res);
+				console.log(res);
+			}
 	}
-	return (res);
-}
-
-
-
 
 </script>
 
 <body>
 	<form onsubmit="calculate()">
-	<input type="text" id="num1"><br />
+	<input type="text" id="num1">
 	<select id="operator">
 		<option value="+"> + </option>
 		<option value="-"> - </option>
 		<option value="*"> * </option>
 		<option value="/"> / </option>
 		<option value="%"> % </option>
-	</select><br />
+	</select>
 	<input type="text" id="num2"><br />
 	<input type="submit" value="Try me!"><br />
 </form>
